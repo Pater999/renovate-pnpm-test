@@ -1,0 +1,47 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":rebaseStalePrs"
+    ],
+    "labels": [
+        "renovate"
+    ],
+    "packageRules": [
+        {
+            "description": "Group PRs based on type of updates",
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "excludePackagePatterns": [
+                "pnpm"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-minor-patch",
+            "labels": [
+                "non-major dependencies"
+            ],
+            "automerge": true,
+            "automergeType": "pr",
+            "schedule": [
+                "every weekday"
+            ],
+            "automergeSchedule": [
+                "every weekday"
+            ]
+        }
+    ],
+    "dependencyDashboard": true,
+    "prConcurrentLimit": 5,
+    "stabilityDays": 3,
+    "schedule": [
+        "every weekday"
+    ],
+    "baseBranches": [
+        "master"
+    ]
+}
