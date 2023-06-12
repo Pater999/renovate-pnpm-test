@@ -33,9 +33,18 @@
             "automergeSchedule": [
                 "every weekday"
             ]
+        },
+        {
+            "description": "Group PRs based on rangeStrategy",
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "excludePackagePatterns": [
+                "pnpm", "node"
+            ],
+            "rangeStrategy": "pin"
         }
     ],
-    "rangeStrategy": "pin",
     "dependencyDashboard": true,
     "prConcurrentLimit": 5,
     "stabilityDays": 3,
